@@ -25,8 +25,8 @@ let saturn_rev_speed = 0.4;
 let uranus_rev_speed = 0.3;
 let neptune_rev_speed = 0.2;
 
-function createSpaceArray(){
-     const skyboxImgpaths = ['C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\back.jpg','C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\down.jpg', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\front.jpg', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\left.jpg', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\right.png', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\up.jpg'];
+function createMaterialArray(){
+     const skyboxImgpaths = ['C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\back.jpg','C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\above.jpg'];
      const materialarray = skyboxImgpaths.map((image)=>{
         let texture = new THREE.TextureLoader().load(image);
         return new THREE.MeshBasicMaterial({map: texture, side: THREE.BackSide});
@@ -48,7 +48,7 @@ function createring(innerRadius){
   let innerRadius = outerRadius - 0.1;
   let thetaSegments = 65; //thetasegment gives the no. of segments and hence the  resulting shape
   const geometry = new THREE.RingGeometry(innerRadius, outerRadius, thetaSegments);
-  const material = new THREE.MeshBasicMaterial({color: 'silver', side: THREE.DoubleSide}); //doublesided as in uppar neeche dono se same dikhega has 2 sides
+  const material = new THREE.MeshBasicMaterial({color: 'grey', side: THREE.DoubleSide}); //doublesided as in uppar neeche dono se same dikhega has 2 sides
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
   mesh.rotation.x = Math.PI/2; //IN ORDER TO ROTATE THE THINGS TO LAY ON THE X AXIS
@@ -92,7 +92,7 @@ function init(){
     planet_mars = loadPlanetTexture("C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\mars.jpg", 3.5, 100, 100, 'standard');
     planet_jupiter = loadPlanetTexture("C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\jupiter_hd.jpg", 10, 100, 100, 'standard');
     planet_saturn = loadPlanetTexture("C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\saturn.jpg", 8, 100, 100, 'standard');
-    planet_uranus = loadPlanetTexture("C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\uranus_hd.jpg", 6, 100, 100, 'standard');
+    planet_uranus = loadPlanetTexture("C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\planet-uranus_hd.jpg", 6, 100, 100, 'standard');
     planet_neptune = loadPlanetTexture("C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\neptune_hd.jpg", 5, 100, 100, 'standard');
 
 
