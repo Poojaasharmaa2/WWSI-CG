@@ -4,26 +4,26 @@ import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/js
 
 let scene, camera, renderer, controls, skybox;
 let planet_sun, planet_mercury, planet_venus, planet_earth, planet_mars, planet_jupiter, planet_saturn, planet_uranus, planet_neptune;
-let planet_sun_label
+let planet_sun_label;
 
-let mercury_orb_rad = 45
-let venus_orb_rad = 55
-let earth_orb_rad = 65
-let mars_orb_rad = 80
-let jupiter_orb_rad = 100
-let saturn_orb_rad = 120
-let uranus_orb_rad = 145
-let neptune_orb_rad = 170
+let mercury_orb_rad = 45;
+let venus_orb_rad = 55;
+let earth_orb_rad = 65;
+let mars_orb_rad = 80;
+let jupiter_orb_rad = 100;
+let saturn_orb_rad = 120;
+let uranus_orb_rad = 145;
+let neptune_orb_rad = 170;
 
 
-let mercury_rev_speed = 1.5
-let venus_rev_speed = 1.1
-let earth_rev_speed = 0.8
-let mars_rev_speed = 0.6
-let jupiter_rev_speed = 0.5
-let saturn_rev_speed = 0.4
-let uranus_rev_speed = 0.3
-let neptune_rev_speed = 0.2
+let mercury_rev_speed = 1.5;
+let venus_rev_speed = 1.1;
+let earth_rev_speed = 0.8;
+let mars_rev_speed = 0.6;
+let jupiter_rev_speed = 0.5;
+let saturn_rev_speed = 0.4;
+let uranus_rev_speed = 0.3;
+let neptune_rev_speed = 0.2;
 
 function createSpaceArray(){
      const skyboxImgpaths = ['C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\back.jpg','C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\down.jpg', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\front.jpg', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\left.jpg', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\right.png', 'C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\up.jpg'];
