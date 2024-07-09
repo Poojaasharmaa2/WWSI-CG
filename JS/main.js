@@ -27,7 +27,7 @@ let neptune_rev_speed = 0.2;
 
 function createMaterialArray(){
      const skyboxImgpaths = ['C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\back.jpg','C:\Users\pooji\OneDrive\Desktop\Solar3d-webd\img\cube\above.jpg'];
-     const materialarray = skyboxImgpaths.map((image)=>{
+     const materialarray = skyboxImgpaths.map((image) => {
         let texture = new THREE.TextureLoader().load(image);
         return new THREE.MeshBasicMaterial({map: texture, side: THREE.BackSide});
      }
@@ -38,13 +38,13 @@ function createMaterialArray(){
 /*to make a cube and weave the textures and cube together*/
 
 function setSkybox(){
-    const materialarray = createSpaceArray();
+    const materialarray = createMaterialArray();
     let skyboxgeo= new THREE.BoxGeometry(1100,1100,1100);
     skybox = new THREE.Mesh(skyboxgeo, materialarray);
     scene.add(skybox);
 }
 
-function createring(innerRadius){
+function createRing(innerRadius){
   let innerRadius = outerRadius - 0.1;
   let thetaSegments = 65; //thetasegment gives the no. of segments and hence the  resulting shape
   const geometry = new THREE.RingGeometry(innerRadius, outerRadius, thetaSegments);
@@ -79,8 +79,8 @@ function init(){
     camera = new THREE.PerspectiveCamera(
     82, /* gives angle of visiblity*/
     window.innerWidth / window.innerHeight, /* to set the aspect ratio to the screen size*/
-    0.5, /*near sight*/
-    1000, /*farsight*/
+    0.1, /*near sight*/
+    1000 /*farsight*/
     );
 
     setSkybox();
@@ -98,26 +98,26 @@ function init(){
 
 
 
-  scene.add(planet_sun);
-  scene.add(planet_mercury);
-  scene.add(planet_venus);
-  scene.add(planet_earth);
-  scene.add(planet_mars);
-  scene.add(planet_jupiter);
-  scene.add(planet_saturn);
-  scene.add(planet_uranus);
-  scene.add(planet_neptune);
+    scene.add(planet_sun);
+    scene.add(planet_mercury);
+    scene.add(planet_venus);
+    scene.add(planet_earth);
+    scene.add(planet_mars);
+    scene.add(planet_jupiter);
+    scene.add(planet_saturn);
+    scene.add(planet_uranus);
+    scene.add(planet_neptune);
 
   
    
-     createring(mercury_orb_rad);
-     createring(venus_orb_rad);
-     createring(earth_orb_rad);
-     createring(mars_orb_rad);
-     createring(jupiter_orb_rad);
-     createring(saturn_orb_rad);
-     createring(uranus_orb_rad);
-     createring(neptune_orb_rad);
+     createRing(mercury_orb_rad);
+     createRing(venus_orb_rad);
+     createRing(earth_orb_rad);
+     createRing(mars_orb_rad);
+     createRing(jupiter_orb_rad);
+     createRing(saturn_orb_rad);
+     createRing(uranus_orb_rad);
+     createRing(neptune_orb_rad);
   
 
    
@@ -152,6 +152,9 @@ function planetrevolution(time, speed, planet, orbitRadius, planetname){
 
    
 function animate(time){
+  requestAnimationFrame(animate);
+
+
   const rotationSpeed = 0.005;
   sun.rotation.y += rotationSpeed;
   mercury.rotation.y += rotationSpeed;
@@ -177,7 +180,6 @@ function animate(time){
 
   //to keep it running always
   controls.update();
-  requestAnimationFrame(animate)
   renderer.render(scene, camera);
 
   
@@ -197,7 +199,7 @@ function onWindowResize(){
 
 //eventlistener
 window.addEventListener("resize", onWindowResize, false);
-init()
-animate(0) //time starts from 0
+init();
+animate(0); //time starts from 0
 
 
