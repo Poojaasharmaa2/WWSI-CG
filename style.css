@@ -3,8 +3,121 @@ margin: 0;
 padding: 0;
 }
 
+
+li{
+    list-style: none; 
+ }
+ .logo{
+     height:180px;
+     width:180px;
+     display:flex;
+ }
+ 
+ #tabs{
+     text-decoration:none;
+     color:white;
+     font-size:1.25rem;
+     font-family: "Bebas Neue", sans-serif;
+     letter-spacing:0.12rem;
+ }
+ #tabs:hover::after{
+     content:'';
+     width:0%;
+     height:1px;
+     display:block;
+     background:white;
+     margin:auto;
+     transition-duration: 0.3s;
+ }
+ #tabs:hover::after{
+     width:100%;
+ }
+ 
+ header{
+     position:relative;
+     padding:0 2rem;
+ }
+ .navbar{
+     width:100%;
+     height:60px;
+     margin:0 auto;
+     display:flex;
+     align-items:center;
+     justify-content:space-between;
+     margin-top:2rem;
+ }
+ .links{
+     display:flex;
+     gap:2rem;
+     margin-right:12rem;
+ }
+ .toggle_btn{
+     display:none;
+     cursor:pointer;
+     height:30px;
+     width:30px;
+ 
+ }
+ 
+ .dropdown_menu{
+     display:none;
+     position:absolute;
+     right:2rem;
+     top:60px;
+     height:0px;
+     width:300px;
+     background:rgb(68, 66, 66);
+     overflow:hidden;
+     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+  #tabs:hover{
+     color:rgb(138, 189, 234);
+     text-decoration: none;
+     transition-duration: 0.2s;
+ }
+ .dropdown_menu.open{
+     height:240px;
+ }
+ .dropdown_menu li{
+     font-size:35px;
+     padding:0.7rem;
+     display:flex;
+     align-items: center;
+     justify-content:center;
+ }
+ .dropdown_menu{
+     width:100%;
+     justify-content: center;
+ }
+ 
+ /* RESPONSIVE */
+ @media(max-width:1101px){
+     .navbar .links{
+         display:none;
+     }
+     .navbar .toggle_btn{
+         display:block;
+     }
+     .dropdown_menu{
+         display:block;
+     }
+ }
+ @media(max-width:1101px){
+     .dropdown_menu{
+         left:2rem;
+         width:unset;
+     }
+ }
+
 #c {
     background: url("img/cube2/sky_bg.png") no-repeat center center;
     background: black;
     background-size: cover;
 } 
+
+.hero-section {
+    background-color: black;
+    background-size: cover;
+    height:fit-content;
+    
+}
