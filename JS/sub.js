@@ -26,7 +26,7 @@ let neptune_rev_speed = 0.2
 
 
 function createMaterialArray(){
-    const skyboxImgpaths = ['img/cube2/sky_down.webp','img/cube2/sky_front.jpeg','img/cube2/sky_above.png','img/cube2/sky_rt.avif','img/cube2/sky_lf.webp','img/cube2/sky_back.jpg']
+    const skyboxImgpaths = ['img/cube2/sky_down.webp','img/cube2/sky_back.jpg','img/cube2/sky_above.png','img/cube2/sky_rt.avif','img/cube2/sky_lf.webp','img/cube2/sky_front.jpeg']
 
     
     const materialarray = skyboxImgpaths.map((image) => {
