@@ -153,6 +153,58 @@ function onWindowResize(){
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   }
+const planets = [planet_sun, planet_mercury, planet_venus, planet_earth, planet_mars,planet_jupiter ,planet_saturn,planet_uranus, planet_neptune];
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+
+function onMouseClick(event) {
+    // Normalize mouse coordinates
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Update the raycaster with the camera and mouse position
+    raycaster.setFromCamera(mouse, camera);
+
+    // Calculate objects intersecting the picking ray
+    const intersects = raycaster.intersectObjects(planets);
+
+    if (intersects.length > 0) {
+        const clickedPlanet = intersects[0].object;
+        handlePlanetClick(clickedPlanet);
+    }
+}
+
+function handlePlanetClick(planet) {
+    // Redirect based on the planet clicked
+    if (planet === planets[0]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    } else if (planet === planets[1]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    else if (planet === planets[2]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    else if (planet === planets[3]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    else if (planet === planets[4]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    else if (planet === planets[5]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    else if (planet === planets[6]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    else if (planet === planets[7]) {
+        window.location.href = 'https://earth.google.com/web/@0,-3.79869995,0a,22251752.77375655d,35y,0h,0t,0r/data=OgMKATA';
+    }
+    
+}
+
+// Add the event listener
+window.addEventListener('click', onMouseClick);
 window.addEventListener("resize", onWindowResize, false);
 
 init();
