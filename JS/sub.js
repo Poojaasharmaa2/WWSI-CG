@@ -24,7 +24,7 @@ let mars_rev_speed = 0.06;
 let jupiter_rev_speed = 0.05;
 let saturn_rev_speed = 0.04;
 let uranus_rev_speed = 0.03;
-let neptune_rev_speed = 0.02;
+let neptune_rev_speed = 0.01;
 
 const planets = [];
 
@@ -156,8 +156,11 @@ function onWindowResize() {
 }
 
 function onMouseClick(event) {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    // Calculate mouse coordinates relative to the canvas element
+    const rect = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(planets);
 
@@ -194,6 +197,7 @@ window.addEventListener("resize", onWindowResize, false);
 
 init();
 animate(0);
+
 
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                     
