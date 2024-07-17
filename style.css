@@ -1,7 +1,11 @@
 *{
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
+
+
+
 
 
 li{
@@ -91,7 +95,7 @@ li{
  }
  
  /* RESPONSIVE */
- @media(max-width:1101px){
+  @media(max-width:1101px){
      .navbar .links{
          display:none;
      }
@@ -107,7 +111,8 @@ li{
          left:2rem;
          width:unset;
      }
- }
+ }  
+
 
 #c {
     background: url("img/cube2/sky_bg.png") no-repeat center center;
@@ -115,23 +120,28 @@ li{
     background-size: cover;
 } 
 
-.hero-section {
+#hero-section {
     background-color: black;
     background-size: cover;
     height:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+
     
 }
+
+
 
 .message {
     color: whitesmoke;
     align-items: center;
+    display: inline;
+    height: 40px;
     justify-content: center;
-    font-size: 0.85rem;
-    bottom: 
-
-
-
-
-
-
+    font-size: 0.80rem;
+    width: 90%;
+    
 }
+

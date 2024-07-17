@@ -1,7 +1,12 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 
-const container = document.getElementById('solarsystem-animated');
+document.addEventListener("DOMContentLoaded", function() {
+    const outerDiv = document.getElementById('hero-section')
+    const innerDiv = document.getElementById('solarsystem-animated');
+    // Your JavaScript code targeting the container
+});
+
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
@@ -27,6 +32,7 @@ let uranus_rev_speed = 0.03;
 let neptune_rev_speed = 0.01;
 
 const planets = [];
+
 
 function createMaterialArray() {
     const skyboxImgPaths = ['img/cube2/sky_down.webp', 'img/cube2/sky_back.jpg', 'img/cube2/sky_above.png', 'img/cube2/sky_rt.avif', 'img/cube2/sky_lf.webp', 'img/cube2/sky_front.jpeg'];
@@ -194,6 +200,7 @@ function handlePlanetClick(planet) {
 
 window.addEventListener('click', onMouseClick);
 window.addEventListener("resize", onWindowResize, false);
+
 
 init();
 animate(0);
